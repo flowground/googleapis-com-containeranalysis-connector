@@ -1,0 +1,74 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A scan configuration specifies whether Cloud components in a project have a\nparticular type of analysis being run. For example, it can configure whether\nvulnerability scanning is being done on Docker images or not.",
+            "properties": {
+                "createTime": {
+                    "description": "Output only. The time this scan config was created.",
+                    "format": "google-datetime",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Output only. A human-readable description of what the scan configuration\ndoes.",
+                    "type": "string"
+                },
+                "enabled": {
+                    "description": "Whether the scan is enabled.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "Output only. The name of the scan configuration in the form of\n`projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.",
+                    "type": "string"
+                },
+                "updateTime": {
+                    "description": "Output only. The time this scan config was last updated.",
+                    "format": "google-datetime",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

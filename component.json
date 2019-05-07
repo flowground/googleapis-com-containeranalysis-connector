@@ -1,0 +1,339 @@
+{
+    "title": "Container Analysis",
+    "description": "An implementation of the Grafeas API, which stores, and enables querying and retrieval of critical metadata about all of your software artifacts.",
+    "docsUrl": "https://cloud.google.com/container-analysis/api/reference/rest/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/containeranalysis/v1beta1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://containeranalysis.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "containeranalysis_projects_occurrences_delete": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_delete.js",
+            "title": "Deletes the specified occurrence. For example, use this method to delete an\noccurrence when the occurrence is no longer applicable for the given\nresource.",
+            "description": "Deletes the specified occurrence. For example, use this method to delete an\noccurrence when the occurrence is no longer applicable for the given\nresource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_scanConfigs_get": {
+            "main": "./lib/actions/containeranalysis_projects_scanConfigs_get.js",
+            "title": "Gets the specified scan configuration.",
+            "description": "Gets the specified scan configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_scanConfigs_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_patch": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_patch.js",
+            "title": "Updates the specified occurrence.",
+            "description": "Updates the specified occurrence.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_scanConfigs_update": {
+            "main": "./lib/actions/containeranalysis_projects_scanConfigs_update.js",
+            "title": "Updates the specified scan configuration.",
+            "description": "Updates the specified scan configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_scanConfigs_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_getNotes": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_getNotes.js",
+            "title": "Gets the note attached to the specified occurrence. Consumer projects can\nuse this method to get a note that belongs to a provider project.",
+            "description": "Gets the note attached to the specified occurrence. Consumer projects can\nuse this method to get a note that belongs to a provider project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_getNotes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_notes_occurrences_list": {
+            "main": "./lib/actions/containeranalysis_projects_notes_occurrences_list.js",
+            "title": "Lists occurrences referencing the specified note. Provider projects can use\nthis method to get all occurrences across consumer projects referencing the\nspecified note.",
+            "description": "Lists occurrences referencing the specified note. Provider projects can use\nthis method to get all occurrences across consumer projects referencing the\nspecified note.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_notes_occurrences_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_notes_list": {
+            "main": "./lib/actions/containeranalysis_projects_notes_list.js",
+            "title": "Lists notes for the specified project.",
+            "description": "Lists notes for the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_notes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_notes_create": {
+            "main": "./lib/actions/containeranalysis_projects_notes_create.js",
+            "title": "Creates a new note.",
+            "description": "Creates a new note.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_notes_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_notes_batchCreate": {
+            "main": "./lib/actions/containeranalysis_projects_notes_batchCreate.js",
+            "title": "Creates new notes in batch.",
+            "description": "Creates new notes in batch.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_notes_batchCreate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_list": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_list.js",
+            "title": "Lists occurrences for the specified project.",
+            "description": "Lists occurrences for the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_create": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_create.js",
+            "title": "Creates a new occurrence.",
+            "description": "Creates a new occurrence.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_batchCreate": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_batchCreate.js",
+            "title": "Creates new occurrences in batch.",
+            "description": "Creates new occurrences in batch.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_batchCreate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_getVulnerabilitySummary": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_getVulnerabilitySummary.js",
+            "title": "Gets a summary of the number and severity of occurrences.",
+            "description": "Gets a summary of the number and severity of occurrences.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_getVulnerabilitySummary.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_scanConfigs_list": {
+            "main": "./lib/actions/containeranalysis_projects_scanConfigs_list.js",
+            "title": "Lists scan configurations for the specified project.",
+            "description": "Lists scan configurations for the specified project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_scanConfigs_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_getIamPolicy": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_getIamPolicy.js",
+            "title": "Gets the access control policy for a note or an occurrence resource.\nRequires `containeranalysis.notes.setIamPolicy` or\n`containeranalysis.occurrences.setIamPolicy` permission if the resource is\na note or occurrence, respectively.\n\nThe resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for\nnotes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for\noccurrences.",
+            "description": "Gets the access control policy for a note or an occurrence resource.\nRequires `containeranalysis.notes.setIamPolicy` or\n`containeranalysis.occurrences.setIamPolicy` permission if the resource is\na note or occurrence, respectively.\n\nThe resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for\nnotes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for\noccurrences.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_getIamPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_setIamPolicy": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_setIamPolicy.js",
+            "title": "Sets the access control policy on the specified note or occurrence.\nRequires `containeranalysis.notes.setIamPolicy` or\n`containeranalysis.occurrences.setIamPolicy` permission if the resource is\na note or an occurrence, respectively.\n\nThe resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for\nnotes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for\noccurrences.",
+            "description": "Sets the access control policy on the specified note or occurrence.\nRequires `containeranalysis.notes.setIamPolicy` or\n`containeranalysis.occurrences.setIamPolicy` permission if the resource is\na note or an occurrence, respectively.\n\nThe resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for\nnotes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for\noccurrences.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_setIamPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "containeranalysis_projects_occurrences_testIamPermissions": {
+            "main": "./lib/actions/containeranalysis_projects_occurrences_testIamPermissions.js",
+            "title": "Returns the permissions that a caller has on the specified note or\noccurrence. Requires list permission on the project (for example,\n`containeranalysis.notes.list`).\n\nThe resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for\nnotes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for\noccurrences.",
+            "description": "Returns the permissions that a caller has on the specified note or\noccurrence. Requires list permission on the project (for example,\n`containeranalysis.notes.list`).\n\nThe resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for\nnotes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for\noccurrences.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/containeranalysis_projects_occurrences_testIamPermissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
